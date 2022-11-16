@@ -67,6 +67,8 @@ func nameToNotification(name string) (interface{}, error) {
 		return &NewDunningEventNotification{Type: name}, nil
 	case PreRenewal:
 		return &PreRenewalNotification{Type: name}, nil
+	case NewUsage:
+		return &UsageNotification{Type: name}, nil
 	}
 	return nil, ErrUnknownNotification{name: name}
 }
